@@ -1,5 +1,6 @@
 package com.sdabyd2.programowanie;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,20 +29,26 @@ public class Order {
     }
 
     public void addItem(Item item){
-        items.add(item);
-        addedCount += 1;
+       if(items.stream().anyMatch(o->o.getName().equals(item.getName()))) {
+           items.stream().filter(x -> x.getName().equals(item.getName()))
+                   .findAny().ifPresent(x -> x.setItemCount(x.getItemCount() + item.getItemCount()));
+       }else{
+           items.add(item);
+           addedCount += 1;}
     }
     public double countTotal(){
         double total = 0;
         for (Item item : items) {
             total += item.countPrice();
         }
-        return total;
+        DecimalFormat format = new DecimalFormat("###.##");
+        String temp = format.format(total);
+        return Double.parseDouble(temp);
     }
     public void removeItem(int index){
         items.remove(index);
     }
     public void editItem(int index){
-
+        items.get(index);
     }
 }

@@ -1,0 +1,213 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_STACK_OVERFLOW (0xc00000fd) at pc=0x04603950, pid=2352, tid=0x00001c84
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_112-b15) (build 1.8.0_112-b15)
+# Java VM: Java HotSpot(TM) Client VM (25.112-b15 mixed mode windows-x86 )
+# Problematic frame:
+# J 30 C1 com.sdabyd2.programowanie.Item.countPrice()D (26 bytes) @ 0x04603950 [0x04603940+0x10]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x005ed400):  JavaThread "main" [_thread_in_Java, id=7300, stack(0x00b60000,0x00bb0000)]
+
+siginfo: ExceptionCode=0xc00000fd, ExceptionInformation=0x00000001 0x00b60ffc 
+
+Registers:
+EAX=0x16830b50, EBX=0x16830b50, ECX=0x066d6348, EDX=0x005ed400
+ESP=0x00b64ffc, EBP=0x00b6502c, ESI=0x00b65008, EDI=0x04603950
+EIP=0x04603950, EFLAGS=0x00010206
+
+Top of Stack: (sp=0x00b64ffc)
+0x00b64ffc:   0455476a 40180000 0455476a 066d6348
+0x00b6500c:   00b6500c 16830c08 00b6503c 16830ea0
+0x00b6501c:   00000000 16830c38 00b65008 00b65040
+0x00b6502c:   00b650ac 04603988 33333334 402f3333
+0x00b6503c:   066d6348 00000008 00000008 00000008
+0x00b6504c:   00000008 00000008 00000008 066d6348
+0x00b6505c:   00000000 33333334 402f3333 00000008
+0x00b6506c:   00000008 00000008 00000008 00b650ac 
+
+Instructions: (pc=0x04603950)
+0x04603930:   97 72 94 d1 05 70 0b 68 01 f8 7a ff 06 90 05 68
+0x04603940:   90 90 90 90 90 90 90 3b 41 04 0f 85 30 7c f8 ff
+0x04603950:   89 84 24 00 c0 ff ff 55 83 ec 38 c5 fb 10 41 08
+0x04603960:   8b 71 10 c5 f3 2a ce c5 fb 59 c1 83 fe 05 0f 8e 
+
+
+Register to memory mapping:
+
+EAX={method} {0x16830b54} 'countPrice' '()D' in 'com/sdabyd2/programowanie/Item'
+EBX={method} {0x16830b54} 'countPrice' '()D' in 'com/sdabyd2/programowanie/Item'
+ECX=
+[error occurred during error reporting (printing register info), id 0xc0000005]
+
+Stack: [0x00b60000,0x00bb0000],  sp=0x00b64ffc,  free space=19k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J 30 C1 com.sdabyd2.programowanie.Item.countPrice()D (26 bytes) @ 0x04603950 [0x04603940+0x10]
+C  0x402f3333
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00f1c000 JavaThread "Service Thread" daemon [_thread_blocked, id=7236, stack(0x16f80000,0x16fd0000)]
+  0x00f21c00 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=3172, stack(0x16ef0000,0x16f40000)]
+  0x00f0dc00 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=9348, stack(0x16dd0000,0x16e20000)]
+  0x00f09000 JavaThread "Attach Listener" daemon [_thread_blocked, id=8144, stack(0x16cb0000,0x16d00000)]
+  0x00f07000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5800, stack(0x16c20000,0x16c70000)]
+  0x00eea400 JavaThread "Finalizer" daemon [_thread_blocked, id=14536, stack(0x16aa0000,0x16af0000)]
+  0x00ed4800 JavaThread "Reference Handler" daemon [_thread_blocked, id=16132, stack(0x06590000,0x065e0000)]
+=>0x005ed400 JavaThread "main" [_thread_in_Java, id=7300, stack(0x00b60000,0x00bb0000)]
+
+Other Threads:
+  0x00dad000 VMThread [stack: 0x00e80000,0x00ed0000] [id=6432]
+  0x00f20800 WatcherThread [stack: 0x17010000,0x17060000] [id=10380]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 1168K [0x06600000, 0x06b50000, 0x0bb50000)
+  eden space 4416K,  26% used [0x06600000, 0x067243f8, 0x06a50000)
+  from space 512K,   0% used [0x06a50000, 0x06a50000, 0x06ad0000)
+  to   space 512K,   0% used [0x06ad0000, 0x06ad0000, 0x06b50000)
+ tenured generation   total 10944K, used 0K [0x0bb50000, 0x0c600000, 0x16600000)
+   the space 10944K,   0% used [0x0bb50000, 0x0bb50000, 0x0bb50200, 0x0c600000)
+ Metaspace       used 1849K, capacity 2248K, committed 2368K, reserved 4480K
+
+Card table byte_map: [0x00db0000,0x00e40000] byte_map_base: 0x00d7d000
+
+Polling page: 0x00420000
+
+CodeCache: size=32768Kb used=719Kb max_used=719Kb free=32048Kb
+ bounds [0x04550000, 0x04608000, 0x06550000]
+ total_blobs=162 nmethods=31 adapters=71
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.158 Thread 0x00f21c00   27             sun.nio.cs.UTF_8$Encoder::encode (359 bytes)
+Event: 0.159 Thread 0x00f21c00 nmethod 27 0x046020c8 code [0x04602210, 0x04602668]
+Event: 0.159 Thread 0x00f21c00   28             java.io.WinNTFileSystem::normalize (143 bytes)
+Event: 0.159 Thread 0x00f21c00 nmethod 28 0x04602bc8 code [0x04602d20, 0x04602fcc]
+Event: 0.191 Thread 0x00f21c00   29             sun.misc.FDBigInteger::mult (64 bytes)
+Event: 0.191 Thread 0x00f21c00 nmethod 29 0x04603408 code [0x04603500, 0x046036b0]
+Event: 98.028 Thread 0x00f21c00   30             com.sdabyd2.programowanie.Item::countPrice (26 bytes)
+Event: 98.028 Thread 0x00f21c00 nmethod 30 0x04603848 code [0x04603940, 0x046039fc]
+Event: 98.028 Thread 0x00f21c00   31             com.sdabyd2.programowanie.Item::countPriceWithDiscount (90 bytes)
+Event: 98.028 Thread 0x00f21c00 nmethod 31 0x04603a88 code [0x04603bd0, 0x04603d64]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 32.208 Thread 0x005ed400 Exception <a 'java/lang/StackOverflowError'> (0x066f8c88) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u112\7884\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 323]
+Event: 41.466 Thread 0x005ed400 Exception <a 'java/lang/StackOverflowError'> (0x066fc938) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u112\7884\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 323]
+Event: 86.180 Thread 0x005ed400 Exception <a 'java/lang/StackOverflowError'> (0x067005e8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u112\7884\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 323]
+Event: 88.952 Thread 0x005ed400 Exception <a 'java/lang/StackOverflowError'> (0x06704298) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u112\7884\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 323]
+Event: 90.133 Thread 0x005ed400 Exception <a 'java/lang/StackOverflowError'> (0x06707f48) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u112\7884\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 323]
+Event: 91.138 Thread 0x005ed400 Exception <a 'java/lang/StackOverflowError'> (0x0670bbf8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u112\7884\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 323]
+Event: 92.151 Thread 0x005ed400 Exception <a 'java/lang/StackOverflowError'> (0x0670f8c0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u112\7884\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 323]
+Event: 93.145 Thread 0x005ed400 Exception <a 'java/lang/StackOverflowError'> (0x06713570) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u112\7884\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 323]
+Event: 95.859 Thread 0x005ed400 Exception <a 'java/lang/StackOverflowError'> (0x06717220) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u112\7884\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 323]
+Event: 97.122 Thread 0x005ed400 Exception <a 'java/lang/StackOverflowError'> (0x0671aed0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u112\7884\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 323]
+
+Events (10 events):
+Event: 98.027 Thread 0x00f10c00 Thread exited: 0x00f10c00
+Event: 98.027 Executing VM operation: ChangeBreakpoints
+Event: 98.027 Executing VM operation: ChangeBreakpoints done
+Event: 98.027 Executing VM operation: ChangeBreakpoints
+Event: 98.027 Executing VM operation: ChangeBreakpoints done
+Event: 98.027 Executing VM operation: ChangeBreakpoints
+Event: 98.027 Executing VM operation: ChangeBreakpoints done
+Event: 98.027 Executing VM operation: ChangeBreakpoints
+Event: 98.027 Executing VM operation: ChangeBreakpoints done
+Event: 98.028 Thread 0x00f06400 Thread exited: 0x00f06400
+
+
+Dynamic libraries:
+0x01100000 - 0x01133000 	C:\Program Files (x86)\Java\jdk1.8.0_112\bin\java.exe
+0x77c60000 - 0x77ded000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x76400000 - 0x764d0000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x74f30000 - 0x75107000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x72a40000 - 0x72ada000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x77b10000 - 0x77b88000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x76710000 - 0x767cd000 	C:\WINDOWS\System32\msvcrt.dll
+0x75f60000 - 0x75fa3000 	C:\WINDOWS\System32\sechost.dll
+0x77ba0000 - 0x77c5e000 	C:\WINDOWS\System32\RPCRT4.dll
+0x74680000 - 0x746a0000 	C:\WINDOWS\System32\SspiCli.dll
+0x74670000 - 0x7467a000 	C:\WINDOWS\System32\CRYPTBASE.dll
+0x74ed0000 - 0x74f27000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x758a0000 - 0x75a15000 	C:\WINDOWS\System32\USER32.dll
+0x75470000 - 0x75486000 	C:\WINDOWS\System32\win32u.dll
+0x75a20000 - 0x75a42000 	C:\WINDOWS\System32\GDI32.dll
+0x765b0000 - 0x7670e000 	C:\WINDOWS\System32\gdi32full.dll
+0x757b0000 - 0x7582c000 	C:\WINDOWS\System32\msvcp_win.dll
+0x75350000 - 0x75467000 	C:\WINDOWS\System32\ucrtbase.dll
+0x73900000 - 0x73b11000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.16299.192_none_5d760485a7e0eb41\COMCTL32.dll
+0x746b0000 - 0x748f6000 	C:\WINDOWS\System32\combase.dll
+0x755f0000 - 0x75615000 	C:\WINDOWS\System32\IMM32.DLL
+0x74430000 - 0x744ef000 	C:\Program Files (x86)\Java\jdk1.8.0_112\jre\bin\msvcr100.dll
+0x72670000 - 0x72a3e000 	C:\Program Files (x86)\Java\jdk1.8.0_112\jre\bin\client\jvm.dll
+0x75830000 - 0x75836000 	C:\WINDOWS\System32\PSAPI.DLL
+0x6f750000 - 0x6f758000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x73760000 - 0x73784000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x74660000 - 0x74668000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x75a50000 - 0x75ab6000 	C:\WINDOWS\System32\WS2_32.dll
+0x73730000 - 0x73753000 	C:\WINDOWS\SYSTEM32\winmmbase.dll
+0x75280000 - 0x752b8000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x74420000 - 0x7442c000 	C:\Program Files (x86)\Java\jdk1.8.0_112\jre\bin\verify.dll
+0x743f0000 - 0x74411000 	C:\Program Files (x86)\Java\jdk1.8.0_112\jre\bin\java.dll
+0x742e0000 - 0x7430a000 	C:\Program Files (x86)\Java\jdk1.8.0_112\jre\bin\jdwp.dll
+0x742d0000 - 0x742d7000 	C:\Program Files (x86)\Java\jdk1.8.0_112\jre\bin\npt.dll
+0x743d0000 - 0x743e3000 	C:\Program Files (x86)\Java\jdk1.8.0_112\jre\bin\zip.dll
+0x767d0000 - 0x77b03000 	C:\WINDOWS\System32\SHELL32.dll
+0x75490000 - 0x75518000 	C:\WINDOWS\System32\shcore.dll
+0x74900000 - 0x74ec6000 	C:\WINDOWS\System32\windows.storage.dll
+0x75540000 - 0x75585000 	C:\WINDOWS\System32\shlwapi.dll
+0x755e0000 - 0x755ee000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x75fb0000 - 0x75ff5000 	C:\WINDOWS\System32\powrprof.dll
+0x75520000 - 0x75534000 	C:\WINDOWS\System32\profapi.dll
+0x74040000 - 0x74048000 	C:\Program Files (x86)\Java\jdk1.8.0_112\jre\bin\dt_socket.dll
+0x6fdb0000 - 0x6fe05000 	C:\WINDOWS\system32\mswsock.dll
+0x722d0000 - 0x72451000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:52972,suspend=y,server=n -Dfile.encoding=UTF-8 
+java_command: com.sdabyd2.programowanie.Main
+java_class_path (initial): C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\deploy.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\access-bridge-32.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\cldrdata.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\dnsns.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\jaccess.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\jfxrt.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\localedata.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\nashorn.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\sunec.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\sunjce_provider.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\sunmscapi.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\sunpkcs11.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\ext\zipfs.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\javaws.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\jfxswt.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\management-agent.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\plugin.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.8.0_112\jre\lib\rt.jar;C:\Users\Natalia\Documents\ProgramowanieII_orders_NP\target\classes;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3\lib\idea_rt.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files (x86)\Java\jdk1.8.0_112\
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;"C:\Program Files (x86)\Java\jdk1.8.0_112\bin";C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Calibre2\;C:\Program Files (x86)\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Users\Natalia\AppData\Local\Microsoft\WindowsApps;
+USERNAME=Natalia
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 16299 (10.0.16299.15)
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 8147028k(3371712k free), swap 13258936k(6310228k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.112-b15) for windows-x86 JRE (1.8.0_112-b15), built on Sep 22 2016 21:03:20 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sun Jan 28 12:59:09 2018
+elapsed time: 98 seconds (0d 0h 1m 38s)
+
