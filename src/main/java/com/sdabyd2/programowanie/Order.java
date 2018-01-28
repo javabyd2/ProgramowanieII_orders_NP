@@ -1,19 +1,21 @@
 package com.sdabyd2.programowanie;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
-    Item [] items;
-    int addedCount;
-    int maxSize;
+    private List<Item> items;
+    private int addedCount;
+    private int maxSize;
 
     public Order(){
         maxSize = 10;
-        items = new Item[maxSize];
+        items = new ArrayList<>();
     }
 
     public Order(int maxSize){
         this.maxSize = maxSize;
-        items = new Item[maxSize];
-
+        items = new ArrayList<>();
     }
 
     @Override
@@ -26,17 +28,20 @@ public class Order {
     }
 
     public void addItem(Item item){
-        addedCount = 0;
-        if(items[addedCount]!=null){
-            addedCount += 1;
-        }
-        items[addedCount] = item;
+        items.add(item);
+        addedCount += 1;
     }
     public double countTotal(){
         double total = 0;
-        for(int i = 0; i<items.length; i++){
-            total += items[i].countPrice();
+        for (Item item : items) {
+            total += item.countPrice();
         }
         return total;
+    }
+    public void removeItem(int index){
+        items.remove(index);
+    }
+    public void editItem(int index){
+
     }
 }

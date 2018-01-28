@@ -4,7 +4,7 @@ public class Item {
 
     private String name;
     private int itemCount;
-    private int price;
+    private double price;
 
     public Item(String name, int itemCount, int price){
         this.name = name;
@@ -28,7 +28,7 @@ public class Item {
         this.itemCount = itemCount;
     }
 
-    public int getPrice() {
+    public double getPrice(){
         return price;
     }
 
@@ -37,7 +37,7 @@ public class Item {
     }
 
     public double countPrice(){
-        int sum = price * itemCount;
+        double sum = price * itemCount;
         return sum;
     }
 
