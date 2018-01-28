@@ -13,11 +13,30 @@ public class Order {
     public Order(int maxSize){
         this.maxSize = maxSize;
         items = new Item[maxSize];
+
     }
-    public void addItems(Item item){
-        items[0] = item;
+
+    @Override
+    public String toString() {
+        String itemList = "";
+        for (Item item : items) {
+            itemList += item.toString();
+        }
+        return "Zamówienie:\n" + itemList + "\n\nRazem: " + countTotal() + " zł";
+    }
+
+    public void addItem(Item item){
+        addedCount = 0;
+        if(items[addedCount]!=null){
+            addedCount += 1;
+        }
+        items[addedCount] = item;
     }
     public double countTotal(){
-        return
+        double total = 0;
+        for(int i = 0; i<items.length; i++){
+            total += items[i].countPrice();
+        }
+        return total;
     }
 }
