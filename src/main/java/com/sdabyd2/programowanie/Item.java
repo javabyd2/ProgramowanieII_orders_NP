@@ -10,7 +10,12 @@ public class Item {
 
     public Item(String name, int itemCount, double price) {
         this.name = name;
+
         this.itemCount = itemCount;
+        this.price = price;
+    }
+
+    public void setPrice(double price) {
         this.price = price;
     }
 

@@ -19,6 +19,30 @@ public class Order {
         items = new ArrayList<>();
     }
 
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public int getAddedCount() {
+        return addedCount;
+    }
+
+    public void setAddedCount(int addedCount) {
+        this.addedCount = addedCount;
+    }
+
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    public void setMaxSize(int maxSize) {
+        this.maxSize = maxSize;
+    }
+
     @Override
     public String toString() {
         String itemList = "";
